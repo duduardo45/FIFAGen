@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <header>
+    <h1>Register with Team Building Assistance</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Registration Form</h2>
+      <form method="post" action="{% url 'registration_url' %}">
+        {% csrf_token %}
+        <!-- Add your registration form fields here -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <!-- Add more fields as needed -->
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2021 Team Building Assistance. All rights reserved.</p>
+  </footer>
+{% endblock %}
+
+
