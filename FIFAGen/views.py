@@ -1,19 +1,81 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import views as views1
+
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 import requests as r
+from .models import PlayerInBase, Profile
 #from FIFAGen.optimization import base_import
+import FIFAGen.optimization as f
+
+
 
 #base_import()
 
-# FutDB API-Key: c2c45a4c-4b86-471b-8028-0fd73fa978a2
+
 # Create your views here.
+
+
+def create_user(request):
+  context={}
+  if request.method=="POST":
+    u = User.objects.create_user(
+      request.POST["username"],
+      request.POST["email"],
+      request.POST["senha"]
+    )
+    u.save()
+    p = Profile.objects.create(user=u)
+    p.save()
+    return redirect("/")
+  return render(request,"registration/registrar.html",context=context)
+
+
+class Login(views1.LoginView):
+  "herda a view do django."
+
+class Logout(views1.LogoutView):
+  "herda a view do django."
+
+class PasswordReset(views1.PasswordResetView):
+  template_name="registration/senha_reset_form.html"
+  email_template_name = 'registration/senha_reset_email.html'
+
+
+class PasswordResetDone(views1.PasswordResetDoneView):
+  template_name="registration/senha_reset_done.html"
+
+class PasswordResetConfirm(views1.PasswordResetConfirmView):
+  template_name="registration/senha_reset_confirm.html"
+
+class PasswordResetComplete(views1.PasswordResetCompleteView):
+  template_name="registration/senha_reset_complete.html"
+
+
+
+
+@login_required
 def home(request):
   context={
     'jogador':'Alguém',
   }
+  # jogador = PlayerInBase.objects.get(id=1)
+
+  # jogador=jogador.playerKeys
+
+  # context['jogador']=jogador['name']
+
+  jogador = f.searchByKey("totalStats",473)
+  jogador=jogador[0].playerKeys
+  context['jogador']=jogador['name']
   
   return render(request, 'home.html',context=context)
 
 
+
+# FutDB API-Key: c2c45a4c-4b86-471b-8028-0fd73fa978a2
+@login_required
 def fut(request):
   context={}
   

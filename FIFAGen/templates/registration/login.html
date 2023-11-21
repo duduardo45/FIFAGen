@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3 style="padding-top:50px;">Entre com seu cadastro ou 
+<a href="{% url 'cadastrar' %}">cadastre-se aqui.</a>
+</h3>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_ul }}
+  <input type="submit" value="Entrar">
+</form>
+
+<div style="margin-top:50px;">
+  <a href="{% url 'password_reset' %}">Esqueceu sua senha?</a>
+</div>
+
+{% endblock %}

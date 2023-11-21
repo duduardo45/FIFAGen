@@ -3,32 +3,18 @@ from django.db import models
 
 # Create your models here.
 
-#class SiteUser(User):
-#  ""
 
 class PlayerInBase(models.Model):
   id = models.IntegerField(primary_key=True)
   playerKeys = models.JSONField()
 
-"""
-class Player(models.Model):
-  name = models.CharField(max_length=200)
-  age = models.IntegerField()
-  position = models.CharField(max_length=3)
-  nation = models.IntegerField()
-  club = models.IntegerField()
-  league = models.IntegerField()
-  pace = models.IntegerField()
-  shooting = models.IntegerField()
-  passing = models.IntegerField()
-  dribbling = models.IntegerField()
-  defending = models.IntegerField()
-  physical = models.IntegerField()
-  overall = models.IntegerField()
-  
-  def __str__(self):
-    return self.name
-"""
+
+class Profile(models.Model): #modelo que relaciona o usuário com a sua base de jogadores
+  user = models.OneToOneField('auth.User', on_delete=models.CASCADE, primary_key=True)
+  players = models.ManyToManyField(PlayerInBase,blank=True)
+
+
+#exemplo de playerKeys com a chave externa "player":
 """
   {
     "player": {

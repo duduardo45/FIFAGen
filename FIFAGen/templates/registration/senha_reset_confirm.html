@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+<!-- ainda estou testando as coisas, vou editar esta template no futuro. -->
+
+{% block content %}
+    {% if validlink %}
+        <p>Para redefinir sua senha, escreva a nova senha que deseja usar e confirme-a:</p>
+        <form action="" method="post">
+        {% csrf_token %}
+        <ul>
+          {% if form.errors %}
+            <li>As duas senhas não foram iguais. Tente de novo.</li>
+            <p>{{ form.errors }}</p>
+          {% endif %}
+          <div>
+            <li>Nova Senha: {{ form.new_password1 }}</li>
+          </div>
+          <div>
+            <li>Confirme a nova Senha: {{ form.new_password2 }}</li>
+          </div>
+          <li><input type="submit" value="Trocar Senha"></li>
+        </ul>
+          <!--
+            <table>
+                <tr>
+                    <td>{{ form.new_password1.errors }}
+                        <label for="id_new_password1">New password:</label></td>
+                    <td>{{ form.new_password1 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.new_password2.errors }}
+                        <label for="id_new_password2">Confirm password:</label></td>
+                    <td>{{ form.new_password2 }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Change my password"></td>
+                </tr>
+            </table>
+              -->
+          
+        </form>
+    {% else %}
+        <h1>Tentativa falhou. Link inválido.</h1>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+  <form action="" method="post">
+  {% csrf_token %}
+  {% if form.email.errors %}
+    {{ form.email.errors }}
+  {% endif %}
+    <h3>Qual email da conta para qual quer alterar a senha?</h3>
+      <p>{{ form.email }}</p>
+    <input type="submit" value="Redefinir senha">
+  </form>
+
+{% else %}
+
+  <form action="" method="post">
+  {% csrf_token %}
+  {% if form.email.errors %}
+    {{ form.email.errors }}
+  {% endif %}
+    <h3>Qual email da conta para qual esqueceu a senha?</h3>
+      <p>{{ form.email }}</p>
+    <input type="submit" value="Redefinir senha">
+  </form>
+
+{% endif %}
+{% endblock %}

@@ -128,3 +128,20 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGIN_URL= 'login'
+
+LOGOUT_REDIRECT_URL='/login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+#DEFAULT_FROM_EMAIL = 'btd6intro@gmail.com'
+EMAIL_HOST_USER = 'btd6intro@gmail.com'
+#EMAIL_HOST_PASSWORD = 'kD1jzeq0Hpkjopl'
+EMAIL_HOST_PASSWORD = 'fzff lkjl fuyi djcf'
