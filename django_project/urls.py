@@ -18,6 +18,7 @@ from django.urls import path
 from FIFAGen import views
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('users/registrar/',views.create_user,name='cadastrar'),
     path('login/', views.Login.as_view(), name='login'),
     path('logout/', views.Logout.as_view(), name='logout'),
@@ -26,6 +27,6 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', views.PasswordResetConfirm.as_view(), name='password_reset_confirm'),
     path('reset/done/', views.PasswordResetComplete.as_view(), name='password_reset_complete'),
 
-    path('', views.home, name='home'),
+    
     path('admin/', admin.site.urls),
 ]

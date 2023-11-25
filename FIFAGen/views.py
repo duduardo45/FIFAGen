@@ -27,6 +27,8 @@ def create_user(request):
     )
     u.save()
     p = Profile.objects.create(user=u)
+    exemplo = PlayerInBase.objects.get(id=1)
+    p.players.add(exemplo)
     p.save()
     return redirect("/")
   return render(request,"registration/registrar.html",context=context)
@@ -69,6 +71,9 @@ def home(request):
   jogador = f.searchByKey("totalStats",473)
   jogador=jogador[0].playerKeys
   context['jogador']=jogador['name']
+  context['base']='teste'
+  base = request.user.profile.players.all()
+  print(base)
   
   return render(request, 'home.html',context=context)
 
