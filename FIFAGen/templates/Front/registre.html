@@ -4,35 +4,37 @@
 
 
 {% block content %}
-  <header>
-    <h1>Register with Team Building Assistance</h1>
-  </header>
-
-  <main>
-    <section>
-      <h2>Registration Form</h2>
-      <form method="post" action="">
-        {% csrf_token %}
-        <!-- Add your registration form fields here -->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <!-- Add more fields as needed -->
-
-        <button type="submit">Register</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2021 Team Building Assistance. All rights reserved.</p>
-  </footer>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>FIFA Gen - Registre-se</title>
+    {% load static %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'registre.css' %}">
+  
+  </head>
+  
+  <body style="background-image: url('images/banner.jpg'); background-size: cover; background-repeat: no-repeat;">  
+    <main>
+      <div class="container">
+        <div class="register-input">
+          <form action="/register" method="post">
+            {% csrf_token %}
+            <img src="./images/newlogoFG.png" alt="FIFA Gen Logo">
+            <h3>Registre-se</h3>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2021 Team Building Assistance. All rights reserved.</p>
+    </footer>
+  <!-- {% endblock %} -->
+  </body>
 {% endblock %}
 
 

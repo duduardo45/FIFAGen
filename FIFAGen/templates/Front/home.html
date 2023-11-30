@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <link rel="icon" href="/icon/favicon.ico" type="image/icone">
       {% load static %}
+      <link rel="icon" href="{% static 'icon/favicon.ico' %}" type="image/icone">
       <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
 
       <title>FIFA Gen</title>
-
   </head>
 
   <body>
-    <header style="background-image: url({% static '/images/banner.jpg' %});">
+    <header style="background-image: url('{% static 'img/banner.jpg' %}');">
       <div class="container">
         <nav>
           <div class="logo">
-            <a href="#"><img src="{% static '/images/newlogoFG.png' %}" alt="Logo"></a>
+            <a href="#"><img src="{% static 'img/newlogoFG.png' %}" alt="Logo"></a>
           </div><!--logo-->
           <ul>
             <a href="#">Home</a>
-            <a href="sobre">Sobre</a>
+            <a href="#planos">Planos</a>
             <a href="#">Serviços</a>
-            <a href="planos">Planos</a>
+            <a href="#sobre">Sobre</a>       
             <a href="registro">Registre-se</a>
           </ul>
         </nav><!--top bar-->
@@ -47,7 +45,7 @@
           <p>Bem-vindo ao nosso inovador gerador de times para FIFA! Seja você um estrategista em busca da combinação perfeita de jogadores para conquistar a vitória ou um entusiasta que simplesmente adora experimentar diferentes formações, você está no lugar certo. Nosso site foi criado para proporcionar uma experiência única na geração de times, oferecendo os recursos necessários para aprimorar sua partida de futebol.</p>
         </div>
         <div class="bem-vindo-img">
-          <img src="./images/logoFG.png" alt="Bem-vindo">
+          <img src="{% static 'img/logoFG.png' %}" alt="Bem-vindo">
         </div>
       </div>
       <!-- end container -->
@@ -57,7 +55,7 @@
     <section class="ferramenta">
       <div class="container">
         <div class="ferramenta-img">
-          <img src="./images/ferramenta.png" alt="Ferramenta">
+          <img src="{% static 'img/ferramenta.png' %}" alt="Ferramenta">
         </div>
         <div class="ferramenta-text">
           <h2>Ferramentas FIFA Gen</h2>
@@ -69,6 +67,67 @@
       <!-- end container -->
     </section>
     <!-- end ferramenta -->
+    <!-- planos -->
+    <section class="planos" id="planos">
+      <div class="container">
+        <h3>Nossos Planos</h3>
+      </div>
+      <div class="cards">
+        <!-- card-item 1 -->
+        <div class="card-item">
+          <img src="{% static 'img/bronze.png' %}" alt="plano bronze">
+          <h4>Bronze</h4>
+          <p class="vantagens">Vantagens</p>
+          <ul>
+            <li>Acesso à ferramenta de montagem de time.</li>
+            <li>Sugestões de entrosamento básicas.</li>
+            <li>Limitação no número de jogadores favoritos.</li>
+          </ul>
+          <p class="preco">R$ 9,99</p>
+          <div class="card-btn">
+            <a href="#">Assinar</a>
+          </div>
+        </div>
+        <!-- end card-item 1 -->
+        <!-- card-item 2 -->
+        <div class="card-item">
+          <img src="{% static 'img/silver.png' %}" alt="plano silver">
+          <h4>Silver</h4>
+          <p class="vantagens">Vantagens</p>
+          <ul>
+            <li>Todas as características do plano Bronze.</li>
+            <li>Sugestões de entrosamento avançadas.</li>
+            <li>Estatísticas detalhadas dos jogadores.</li>
+            <li>Lista de transferências personalizada.</li>
+          </ul>
+          <p class="preco">R$ 19,99</p>
+          <div class="card-btn">
+            <a href="#">Assinar</a>
+          </div>
+        </div>
+        <!-- end card-item 2 -->
+        <!-- card-item 3 -->
+        <div class="card-item">
+          <img src="{% static 'img/gold.png' %}" alt="plano gold">
+          <h4>Gold</h4>
+          <p class="vantagens">Vantagens</p>
+          <ul>
+            <li>Todas as características do plano Silver.</li>
+            <li>Prioridade no acesso a atualizações e novos recursos.</li>
+            <li>Equipe de suporte dedicada.</li>
+            <li>Acesso exclusivo a eventos e promoções.</li>
+          </ul>
+          <p class="preco">R$ 29,99</p>
+          <div class="card-btn">
+            <a href="#">Assinar</a>
+          </div>
+        </div>
+        <!-- end card-item 3 -->
+
+      </div>
+
+    </section>
+    <!-- end planos -->
 
     <!-- Qualidade/Comunidade -->
     <section class="content">
@@ -84,6 +143,16 @@
       </div>
     </section>  
     <!-- end Qualidade/Comunidade -->
+    <!-- Sobre -->
+    <section class="sobre" id="sobre">
+      <div class="container">
+        <div class="sobre-text">
+          <h2>Sobre nós</h2>
+          <p>A FIFA GEN oferece diversas funcionalidades para os fãs de FIFA, incluindo informações detalhadas sobre jogadores, times e ligas do jogo. Além disso, disponibiliza ferramentas para criar e gerenciar equipes e elencos.</p>
+        </div>
+      </div>
+    </section>  
+    <!-- end Sobre -->
     <!-- contato -->
     <footer class="footer">
       <div class="container">

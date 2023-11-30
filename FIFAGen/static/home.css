@@ -11,9 +11,11 @@
 body{
     background-color: white;
 }
-section,
-footer {
+section{
     padding: 54px 0;
+}
+footer{
+    padding: 20px 0;
 }
 p{
     color: #0000009c;
@@ -27,6 +29,7 @@ p{
 .btn{
     background-color: #80ca51;
     color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     padding: 11px 20px;
     border-radius: 10px;
     cursor: pointer;
@@ -50,6 +53,7 @@ nav{
 nav ul{
     display: flex;
     align-items: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 nav ul a{
     color: white;
@@ -73,6 +77,7 @@ nav ul a:hover::after{
 .banner{
     display: flex;
     justify-content: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 .banner .banner-text{
     margin: 150px;
@@ -87,9 +92,9 @@ nav ul a:hover::after{
 .banner .banner-text p{
     font-size: 20px;
     color: #ffffffb7;
-    font-weight: lighter;
     margin: 20px 0;
 }
+
 /* Intro */
 .bem-vindo .container{
     display: flex;
@@ -116,6 +121,7 @@ nav ul a:hover::after{
     text-align: center;
 }
 
+/* Ferramenta */
 .ferramenta .container{
     display: flex;
     align-items: center;
@@ -144,6 +150,76 @@ nav ul a:hover::after{
     width: 35%;
     height: auto;
 }
+
+/* Planos */
+.planos h3{
+    font-size: 50px;
+    text-align: center;
+}
+.planos .cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.planos .cards .card-item{
+    width: 450px;
+    height: 400px;
+    background-color: #d1e9c2;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.planos .cards .card-item img{
+    width: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.planos .cards .card-item h4{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.planos .cards .card-item .vantagens{
+    color: black;
+    font-weight: lighter;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0;
+}
+.planos .cards .card-item ul{
+    list-style: none;
+    text-align:start;
+}
+.planos .cards .card-item .preco{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+}
+.planos .cards .card-item .card-btn{
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    background-color: #80ca51;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+.planos .cards .card-item .card-btn:hover{
+    background-color: #61993f;
+}
+
+/* Qualidade/Comunidade */
 .content .container{
     display: flex;
     align-items: center;
@@ -154,8 +230,19 @@ nav ul a:hover::after{
 }
 .content .content-text h2{
     font-size: 27px;
-    margin: 100px 0 10px 0;
+    padding-bottom: 15px;
 }
+
+/* Sobre nós */
+.sobre .container{
+    text-align: justify;
+}
+.sobre .sobre-text h2{
+    font-size: 27px;
+    padding-bottom: 15px;
+}
+
+/* Rodape */
 .footer{
     background-color: #80ca51;
     text-align: center;
