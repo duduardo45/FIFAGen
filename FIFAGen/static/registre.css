@@ -69,7 +69,8 @@ input, button{
 footer{
     background-color: #80ca51;
     width: 100%;
-    padding: 20px 20px;
+    height: 50px;
+    padding: 10px 10px;
     position: absolute;
     bottom: 0;
     text-align: end;

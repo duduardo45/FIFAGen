@@ -152,12 +152,9 @@ nav ul a:hover::after{
 }
 
 /* Planos */
-.planos h3{
-    font-size: 50px;
-    text-align: center;
-}
 .planos .cards{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -170,14 +167,19 @@ nav ul a:hover::after{
     border-radius: 14px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
 
 }
+.planos h3{
+    color: black;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
 .planos .cards .card-item img{
-    width: 60px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 50px;
 }
 .planos .cards .card-item h4{
     color: black;
@@ -194,25 +196,25 @@ nav ul a:hover::after{
     margin: 10px 0;
 }
 .planos .cards .card-item ul{
-    list-style: none;
-    text-align:start;
+    list-style: circle;
+    text-align: justify;
 }
 .planos .cards .card-item .preco{
     color: black;
     font-weight: bold;
     font-size: 20px;
-    text-align: center;
-    margin: 10px 0;
+    text-align: end;
+    margin: 20px 0;
 }
 .planos .cards .card-item .card-btn{
-    color: white;
+    background-color: #80ca51;
     text-align: center;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-    background-color: #80ca51;
-    padding: 10px 40px;
+    color: white;
+    width: 40%;
+    height: 40px;
     border-radius: 10px;
     cursor: pointer;
-    display: inline-block;
     transition: 0.1s;
 }
 .planos .cards .card-item .card-btn:hover{

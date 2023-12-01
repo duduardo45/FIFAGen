@@ -7,20 +7,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>FIFA Gen - Registre-se</title>
+    
     {% load static %}
     
+    <link rel="icon" href="{% static 'icon/favicon.ico' %}" type="image/icone">
     <link rel="stylesheet" type="text/css" href="{% static 'registre.css' %}">
+    <title>FG - Registre-se</title>
   
   </head>
   
-  <body style="background-image: url('images/banner.jpg'); background-size: cover; background-repeat: no-repeat;">  
+  <body style="background-image: url('{% static 'img/banner.jpg' %}'); background-size: cover; background-repeat: no-repeat;">  
     <main>
       <div class="container">
         <div class="register-input">
           <form action="/register" method="post">
             {% csrf_token %}
-            <img src="./images/newlogoFG.png" alt="FIFA Gen Logo">
+            <img src="{% static 'img/newlogoFG.png' %}" alt="FIFA Gen Logo">
             <h3>Registre-se</h3>
             <input type="text" id="username" name="username" placeholder="Username" required>
             <input type="email" id="email" name="email" placeholder="E-mail" required>
