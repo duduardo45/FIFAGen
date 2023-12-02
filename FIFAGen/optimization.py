@@ -3,35 +3,51 @@ from FIFAGen.models import PlayerInBase
 from django.contrib.auth.models import User
 
 
-# def initial_team(user, formation=None):
-#   """
-#   initialize the user's team for optimization, with a starting formation
-#   and chooses the appropriate initial players for each position.
-#   (currently, chooses the highest overall player to start)
-#   """
-#   team = {}
+def initial_team(user, formation=None):
+  """
+  initialize the user's team for optimization, with a starting formation
+  and chooses the appropriate initial players for each position.
+  (currently, chooses the highest overall player to start)
+  """
+  team = {}
   
-#   players = user.profile.players.order_by("-playerKeys__totalStats")
+  players = user.profile.players.order_by("-playerKeys__totalStats")
 
-#   if formation is not None:
-#     #positions = {'position': 'max for pos'}
-#     positions = getMaxPlayers(formation)
-#     for pos in positions:
-#       pos_players = players.filter(playerKeys__position=pos)
-#       for p in pos_players:
-#         if team[pos] is None:
-#           team[pos] = [p]
-#         elif team[pos] < positions[pos]:
-#           team[pos].append(p)
-#         else:
-#           break
+  if formation is not None:
+    #positions = {'position': 'max for pos'}
+    maximum = getMaxPlayers(formation)
+    for pos in maximum:
+      pos_players = players.filter(playerKeys__position=pos)
+      for p in pos_players:
+        if team[pos] is None:
+          team[pos] = [p]
+        elif team[pos] < maximum[pos]:
+          team[pos].append(p)
+        else:
+          break
 
   
-#   else:
-#     f=chooseFormation(user)
-#     team = initial_team(user,formation=f)
+  else:
+    f=chooseFormation(user)
+    team = initial_team(user,formation=f)
 
-#   return team
+  return team
+
+def chooseFormation(user):
+
+  return "4-3-3"
+
+
+def getMaxPlayers(formation):
+
+  positions = {}
+  
+  if formation == "4-3-3":
+
+    positions = { 'GK':1,'LCB':1,'RCB':1,'LB':1,'RB':1,'CM':1,'LCM':1,'RCM':1,'LW':1,'RW':1}
+
+  return positions
+
 
 def quimica(team):
 

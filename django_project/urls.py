@@ -27,6 +27,7 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', views.PasswordResetConfirm.as_view(), name='password_reset_confirm'),
     path('reset/done/', views.PasswordResetComplete.as_view(), name='password_reset_complete'),
 
-    
+    path('adicionar',views.add_to_Profile,name='add'),
+  
     path('admin/', admin.site.urls),
 ]

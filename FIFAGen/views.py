@@ -27,8 +27,8 @@ def create_user(request):
     )
     u.save()
     p = Profile.objects.create(user=u)
-    exemplo = PlayerInBase.objects.get(id=1)
-    p.players.add(exemplo)
+    # exemplo = PlayerInBase.objects.get(id=1)
+    # p.players.add(exemplo)
     p.save()
     return redirect("/")
   return render(request,"registration/registrar.html",context=context)
@@ -81,7 +81,7 @@ def home(request):
 
 # FutDB API-Key: c2c45a4c-4b86-471b-8028-0fd73fa978a2
 @login_required
-def fut(request):
+def request_tester(request):
   context={}
   
   payload = { "accept" : "application/json", "X-AUTH-TOKEN": "c2c45a4c-4b86-471b-8028-0fd73fa978a2"}
@@ -91,3 +91,16 @@ def fut(request):
   print('\n',req.headers['x-ratelimit-remaining'],'chamadas restantes hoje\n')
   
   return render(request, 'home.html',context=context)
+
+
+@login_required
+def add_to_Profile(request):
+
+  p=request.user.profile
+  for i in range(1,500):
+    exemplo = PlayerInBase.objects.get(id=i)
+    p.players.add(exemplo)
+
+  print(p.players.all()[:20])
+  print("sucesso.")
+  return redirect("/")
