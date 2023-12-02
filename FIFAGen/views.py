@@ -71,9 +71,8 @@ def home(request):
   jogador = f.searchByKey("totalStats",473)
   jogador=jogador[0].playerKeys
   context['jogador']=jogador['name']
-  context['base']='teste'
-  base = request.user.profile.players.all()
-  print(base)
+  team = f.initial_team(request.user)
+  context['base']=team
   
   return render(request, 'home.html',context=context)
 
@@ -96,11 +95,10 @@ def request_tester(request):
 @login_required
 def add_to_Profile(request):
 
-  p=request.user.profile
-  for i in range(1,500):
-    exemplo = PlayerInBase.objects.get(id=i)
-    p.players.add(exemplo)
+  p=Profile(user=request.user)
+  # for i in range(1700,2000):
+  #   exemplo = PlayerInBase.objects.get(id=i)
+  #   p.players.add(exemplo)
 
-  print(p.players.all()[:20])
   print("sucesso.")
   return redirect("/")

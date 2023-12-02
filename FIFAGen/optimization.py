@@ -1,6 +1,5 @@
 import requests as r
 from FIFAGen.models import PlayerInBase
-from django.contrib.auth.models import User
 
 
 def initial_team(user, formation=None):
@@ -18,10 +17,11 @@ def initial_team(user, formation=None):
     maximum = getMaxPlayers(formation)
     for pos in maximum:
       pos_players = players.filter(playerKeys__position=pos)
+      print(pos,len(pos_players))
       for p in pos_players:
-        if team[pos] is None:
+        if pos not in team.keys():
           team[pos] = [p]
-        elif team[pos] < maximum[pos]:
+        elif len(team[pos]) < maximum[pos]:
           team[pos].append(p)
         else:
           break
@@ -44,7 +44,7 @@ def getMaxPlayers(formation):
   
   if formation == "4-3-3":
 
-    positions = { 'GK':1,'LCB':1,'RCB':1,'LB':1,'RB':1,'CM':1,'LCM':1,'RCM':1,'LW':1,'RW':1}
+    positions = { 'GK':1,'CB':2,'LB':1,'RB':1,'CM':3,'LW':1,'RW':1,'ST':1}
 
   return positions
 

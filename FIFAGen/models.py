@@ -11,7 +11,7 @@ class PlayerInBase(models.Model):
 
 class Profile(models.Model): #modelo que relaciona o usuário com a sua base de jogadores
   user = models.OneToOneField('auth.User', on_delete=models.CASCADE, primary_key=True)
-  players = models.ManyToManyField(PlayerInBase,blank=True)
+  players = models.ManyToManyField(PlayerInBase)
 
 
 #exemplo de playerKeys com a chave externa "player":
