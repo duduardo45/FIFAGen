@@ -12,3 +12,6 @@ def planos(request):
     return render(request, 'Front/planos.html')
 def barrapesquisa (request):
     return render(request, 'Front/barrapesquisa.html')
+
+def gerador(request):
+  return render(request, 'Front/gerador.html')
