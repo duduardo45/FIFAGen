@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: white;
+}
+section{
+    padding: 54px 0;
+}
+footer{
+    padding: 20px 0;
+}
+p{
+    color: #0000009c;
+}
+
+.container{
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+.btn{
+    background-color: #80ca51;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    padding: 11px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+.btn:hover{
+    background-color: #61993f;
+}
+header{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+nav ul a{
+    color: white;
+    margin: 0 25px;
+    text-transform: uppercase;
+    font-size: 15px;
+    display: block;
+}
+nav ul a::after{
+    content: "";
+    background-color: #80ca51;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+nav ul a:hover::after{
+    width: 100%;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.banner .banner-text{
+    margin: 150px;
+    text-align: center;
+    padding: 0 auto;
+}
+.banner .banner-text h1{
+    font-size: 90px;
+    color: white;
+    margin-bottom: 20px;
+}
+.banner .banner-text p{
+    font-size: 20px;
+    color: #ffffffb7;
+    margin: 20px 0;
+}
+
+/* Intro */
+.bem-vindo .container{
+    display: flex;
+    align-items: center;
+}
+.bem-vindo .bem-vindo-text{
+    width:50%
+}
+.bem-vindo .bem-vindo-text h2{
+    font-size: 50px;
+}
+.bem-vindo .bem-vindo-text h3{
+    font-size: 23px;
+    color: #80ca51;
+}
+.bem-vindo .bem-vindo-text p{
+    font-size: 18px;
+    color: #0000009c;
+    text-align: justify;
+    margin: 18px 0 20px 0;
+}
+.bem-vindo .bem-vindo-img{
+    width: 50%;
+    text-align: center;
+}
+
+/* Ferramenta */
+.ferramenta .container{
+    display: flex;
+    align-items: center;
+}
+.ferramenta .ferramenta-text{
+    width:50%
+}
+.ferramenta .ferramenta-text h2{
+    font-size: 50px;
+}
+.ferramenta .ferramenta-text h3{
+    font-size: 23px;
+    color: #80ca51;
+}
+.ferramenta .ferramenta-text p{
+    font-size: 18px;
+    color: #0000009c;
+    text-align: justify;
+    margin: 18px 0 20px 0;
+}
+.ferramenta .ferramenta-img{
+    width: 50%;
+    text-align: center;
+}
+.ferramenta .ferramenta-img img{
+    width: 35%;
+    height: auto;
+}
+
+/* Planos */
+.planos .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.planos .cards .card-item{
+    width: 450px;
+    height: 400px;
+    background-color: #d1e9c2;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+}
+.planos h3{
+    color: black;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.planos .cards .card-item img{
+    width: 50px;
+}
+.planos .cards .card-item h4{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.planos .cards .card-item .vantagens{
+    color: black;
+    font-weight: lighter;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0;
+}
+.planos .cards .card-item ul{
+    list-style: circle;
+    text-align: justify;
+}
+.planos .cards .card-item .preco{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: end;
+    margin: 20px 0;
+}
+.planos .cards .card-item .card-btn{
+    background-color: #80ca51;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.planos .cards .card-item .card-btn:hover{
+    background-color: #61993f;
+}
+
+/* Qualidade/Comunidade */
+.content .container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.content .content-text{
+    width:50%
+}
+.content .content-text h2{
+    font-size: 27px;
+    padding-bottom: 15px;
+}
+
+/* Sobre nós */
+.sobre .container{
+    text-align: justify;
+}
+.sobre .sobre-text h2{
+    font-size: 27px;
+    padding-bottom: 15px;
+}
+
+/* Rodape */
+.footer{
+    background-color: #80ca51;
+    text-align: center;
+}
+
+.footer .footer-text h2{
+    color: white;
+    margin-bottom: 10;
+}
+.footer .footer-text p{
+    margin-bottom: 10px;
+}
+.footer .copyright p{
+    color: white;
+    text-align: end;
+}

@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    {% load static %}
+    
+    <link rel="icon" href="{% static 'icon/favicon.ico' %}" type="image/icone">
+    <link rel="stylesheet" type="text/css" href="{% static 'registre.css' %}">
+    <title>FG - Registre-se</title>
+  
+  </head>
+  
+  <body style="background-image: url('{% static 'img/banner.jpg' %}'); background-size: cover; background-repeat: no-repeat;">  
+    <main>
+      <div class="container">
+        <div class="register-input">
+          <form method="post">
+            {% csrf_token %}
+            <img src="{% static 'img/newlogoFG.png' %}" alt="FIFA Gen Logo">
+            <h3>Registre-se</h3>
+            <input type="text" name="username" placeholder="Username">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="senha" placeholder="Senha">
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 FIFAGen. All rights reserved.</p>
+    </footer>
+  </body>
+{% endblock %}
+
+

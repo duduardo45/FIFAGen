@@ -31,7 +31,7 @@ def create_user(request):
     # p.players.add(exemplo)
     p.save()
     return redirect("/")
-  return render(request,"registration/registrar.html",context=context)
+  return render(request,"Front/registre.html",context=context)
 
 
 class Login(views1.LoginView):
@@ -55,10 +55,40 @@ class PasswordResetComplete(views1.PasswordResetCompleteView):
   template_name="registration/senha_reset_complete.html"
 
 
+def home(request):
+  return render(request, 'Front/home.html')
+
+def sobre(request):
+  return render(request, 'Front/index.html')
+  
+def planos(request):
+  return render(request, 'Front/planos.html')
+
+def barrapesquisa (request):
+  return render(request, 'Front/barrapesquisa.html')
+
+@login_required
+def gerador(request):
+  data = {}
+  team = f.initial_team(request.user)
+  for pos in team:
+    num = len(team[pos])
+    if num > 1:
+      for i in range(num):
+        new_pos = pos + str(i+1)
+        data[new_pos] = team[pos][i]
+    else:
+      data[pos] = team[pos][0]
+
+
+  return render(request, 'Front/gerador.html', context=data)
+
+# if ' ' in team[pos][0].playerKeys['name']:
+#   data[pos]['name'] = team[pos][0].playerKeys['name'].split(' ')[0]
 
 
 @login_required
-def home(request):
+def teste(request):
   context={
     'jogador':'Alguém',
   }
@@ -95,10 +125,13 @@ def request_tester(request):
 @login_required
 def add_to_Profile(request):
 
+  qtdAdd = 0
   p=Profile(user=request.user)
-  # for i in range(1700,2000):
-  #   exemplo = PlayerInBase.objects.get(id=i)
-  #   p.players.add(exemplo)
+  for i in range(17000,18000):
+    if PlayerInBase.objects.filter(id=i).exists():
+      exemplo = PlayerInBase.objects.get(id=i)
+      p.players.add(exemplo)
+      qtdAdd+=1
 
-  print("sucesso.")
+  print("sucesso. %d adicionados" % qtdAdd)
   return redirect("/")

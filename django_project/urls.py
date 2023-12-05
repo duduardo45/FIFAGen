@@ -19,6 +19,11 @@ from FIFAGen import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('', views.home, name='home'),
+    path('sobre', views.sobre, name='index'),
+    path('planos', views.planos,name='planos'),
+    path('barrapesquisa', views.barrapesquisa, name='barrapesquisa'),
+    path('gerador',views.gerador,name='gerador'),
     path('users/registrar/',views.create_user,name='cadastrar'),
     path('login/', views.Login.as_view(), name='login'),
     path('logout/', views.Logout.as_view(), name='logout'),

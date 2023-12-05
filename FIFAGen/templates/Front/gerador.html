@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    {% load static %}
+        
+    <link rel="icon" href="{% static 'icon/favicon.ico' %}" type="image/icone">
+    <link rel="stylesheet" type="text/css" href="{% static 'gerador.css' %}">
+      
+    <title>FG - Gerador de times</title>
+
+
+  </head>
+
+  <body style="background-image: url('{% static 'img/banner.jpg' %}'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">  
+    <div class="container">
+        <div class="gerador">
+            <div class="gerador-titulo">
+                <img src="{% static 'img/newlogoFG.png' %}" alt="FIFA Gen Logo">
+                <h3>Gerador de times</h3>
+            </div>
+
+            <div class="busca">
+                <input class="busca-txt" type="text" id="search-input" required>
+                <a class="busca-btn" href="#">
+                    <img src="{% static 'img/loupe.png' %}" alt="Search">
+                </a>
+            </div>                
+            <div class="gerador-campo" style="background-image: url('{% static 'img/campo.png' %}');">
+                <div class="gerador-formacao">
+                    <div class="ataque">
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                            <div class="overall">
+                                <p>{{ LW.playerKeys.rating }}</p>
+                            </div>
+                            <div class="posicao">
+                                <p>LW</p>
+                            </div>
+                            <div class="nome">
+                                <p>{{ LW.playerKeys.lastName }}</p>
+                            </div>
+                            <ul>
+                                <li class="ritmo">
+                                    <p>{{ LW.playerKeys.pace }}</p>
+                                </li>
+                                <li class="drible">
+                                    <p>{{ LW.playerKeys.dribbling }}</p>
+                                </li>
+                                <li class="chute">
+                                    <p>{{ LW.playerKeys.shooting }}</p>
+                                </li>
+                                <li class="defesa">
+                                    <p>{{ LW.playerKeys.defending }}</p>
+                                </li>
+                                <li class="passe">
+                                    <p>{{ LW.playerKeys.passing }}</p>
+                                </li>
+                                <li class="fisico">
+                                    <p>{{ LW.playerKeys.physicality }}</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ ST.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>ST</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ ST.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ ST.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ ST.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ ST.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ ST.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ ST.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ ST.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ RW.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>RW</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ RW.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ RW.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ RW.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ RW.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ RW.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ RW.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ RW.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="meio">
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ CM1.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>LCM</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ CM1.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ CM1.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ CM1.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ CM1.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ CM1.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ CM1.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ CM1.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ CM2.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>CM</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ CM2.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ CM2.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ CM2.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ CM2.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ CM2.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ CM2.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ CM2.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ CM3.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>RCM</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ CM3.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ CM3.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ CM3.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ CM3.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ CM3.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ CM3.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ CM3.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="zagueiro">
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ LB.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>LB</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ LB.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ LB.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ LB.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ LB.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ LB.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ LB.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ LB.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ CB1.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>LCB</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ CB1.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ CB1.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ CB1.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ CB1.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ CB1.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ CB1.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ CB1.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ CB2.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>RCB</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ CB2.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ CB2.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ CB2.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ CB2.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ CB2.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ CB2.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ CB2.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ RB.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>RB</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ RB.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ RB.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ RB.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ RB.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ RB.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ RB.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ RB.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="goleiro">
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                          <div class="overall">
+                              <p>{{ GK.playerKeys.rating }}</p>
+                          </div>
+                          <div class="posicao">
+                              <p>GK</p>
+                          </div>
+                          <div class="nome">
+                              <p>{{ GK.playerKeys.lastName }}</p>
+                          </div>
+                            <ul>
+                              <li class="ritmo">
+                                  <p>{{ GK.playerKeys.pace }}</p>
+                              </li>
+                              <li class="drible">
+                                  <p>{{ GK.playerKeys.dribbling }}</p>
+                              </li>
+                              <li class="chute">
+                                  <p>{{ GK.playerKeys.shooting }}</p>
+                              </li>
+                              <li class="defesa">
+                                  <p>{{ GK.playerKeys.defending }}</p>
+                              </li>
+                              <li class="passe">
+                                  <p>{{ GK.playerKeys.passing }}</p>
+                              </li>
+                              <li class="fisico">
+                                  <p>{{ GK.playerKeys.physicality }}</p>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gerador-jogadores">
+                <ul class="lista-jogadores">
+                    <li class="lista-jogador">
+                        <div class="jogador" style="background-image: url('{% static 'img/moldura.png' %}');">
+                            <div class="overall">
+                                <p>99</p>
+                            </div>
+                            <div class="posicao">
+                                <p>CT</p>
+                            </div>
+                            <div class="nome">
+                                <p>Messi</p>
+                            </div>
+                            <ul>
+                                <li class="ritmo">
+                                    <p>98</p>
+                                </li>
+                                <li class="drible">
+                                    <p>97</p>
+                                </li>
+                                <li class="chute">
+                                    <p>99</p>
+                                </li>
+                                <li class="defesa">
+                                    <p>90</p>
+                                </li>
+                                <li class="passe">
+                                    <p>95</p>
+                                </li>
+                                <li class="fisico">
+                                    <p>94</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+      <p>&copy; 2023 FIFAGen. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
+
+

@@ -17,7 +17,7 @@ def initial_team(user, formation=None):
     maximum = getMaxPlayers(formation)
     for pos in maximum:
       pos_players = players.filter(playerKeys__position=pos)
-      print(pos,len(pos_players))
+      #print(pos,len(pos_players))
       for p in pos_players:
         if pos not in team.keys():
           team[pos] = [p]
